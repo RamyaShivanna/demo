@@ -1,15 +1,17 @@
-node {
-stage ('build')
-{
-parallel(
-"1st":
-{
-build ( job: 'job1')
-},
-"2nd":
-{
-git clone 'https://github.com/RamyaShivanna/demo.git'
-}
-)
-}
+pipeline {
+    agent none 
+    stages {
+        stage('Example Build') {
+            agent { label 'jenkins-slave-1' } 
+            steps {
+                 sh 'sh /home/ec2-user/file1.sh'
+                }
+        }
+        stage('Example Test') {
+             agent { label 'master' }
+            steps {
+                echo "good day"
+            }
+        }
+    }
 }
