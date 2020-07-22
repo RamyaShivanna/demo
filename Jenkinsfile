@@ -4,7 +4,7 @@ stage ('build')
 parallel(
 "1st":
 {
-build ( job: 'job1)
+build ( job: 'job1')
 },
 "2nd":
 {
