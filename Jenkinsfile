@@ -8,7 +8,7 @@ build ( job: 'job1')
 },
 "2nd":
 {
-build (job: 'job2')
+git clone 'https://github.com/RamyaShivanna/demo.git'
 }
 )
 }
